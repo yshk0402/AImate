@@ -174,6 +174,7 @@ export async function getAllPublishedRoutes(): Promise<string[]> {
 
   for (const locale of LOCALES) {
     routes.push(`/${locale}`);
+    routes.push(`/${locale}/about`);
     routes.push(`/${locale}/blog`);
 
     const [posts, pages] = await Promise.all([getBlogPosts(locale), getLandingPages(locale)]);

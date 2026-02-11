@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 
+import { siteContentByLocale } from "@/components/site/content";
+import { BlogPostTemplate } from "@/components/templates";
 import { getBlogPostBySlug } from "@/lib/content/repository";
 import { isLocale } from "@/lib/i18n/locales";
 
@@ -51,13 +53,7 @@ export default async function BlogDetailPage({
   }
 
   const { content } = await compileMDX({ source: post.body });
+  const localeContent = siteContentByLocale[locale];
 
-  return (
-    <article aria-labelledby="blog-title">
-      <h1 id="blog-title">{post.title}</h1>
-      <p>{post.description}</p>
-      {post.publishedAt ? <p>Published: {post.publishedAt}</p> : null}
-      {content}
-    </article>
-  );
+  return <BlogPostTemplate content={localeContent} post={post} body={content} />;
 }

@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 
 import { siteContentByLocale } from "@/components/site/content";
-import { BlogIndexTemplate } from "@/components/templates";
-import { getBlogPosts } from "@/lib/content/repository";
+import { AboutTemplate } from "@/components/templates";
 import { isLocale } from "@/lib/i18n/locales";
 
-export default async function BlogIndexPage({
+export default async function AboutPage({
   params
 }: {
   params: Promise<{ locale: string }>;
@@ -16,8 +15,7 @@ export default async function BlogIndexPage({
     notFound();
   }
 
-  const posts = await getBlogPosts(locale);
   const content = siteContentByLocale[locale];
 
-  return <BlogIndexTemplate locale={locale} content={content} posts={posts} />;
+  return <AboutTemplate content={content} />;
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 
+import { siteContentByLocale } from "@/components/site/content";
+import { LandingPageTemplate } from "@/components/templates";
 import { getLandingPageByCampaign } from "@/lib/content/repository";
 import { isLocale } from "@/lib/i18n/locales";
 
@@ -51,14 +53,7 @@ export default async function LandingPage({
   }
 
   const { content } = await compileMDX({ source: page.body });
+  const localeContent = siteContentByLocale[locale];
 
-  return (
-    <article aria-labelledby="lp-title">
-      <p>{locale === "ja" ? "ランディングページ" : "Landing Page"}</p>
-      <h1 id="lp-title">{page.title}</h1>
-      <p>{page.description}</p>
-      {page.heroCta ? <p>{locale === "ja" ? `CTA: ${page.heroCta}` : `CTA: ${page.heroCta}`}</p> : null}
-      {content}
-    </article>
-  );
+  return <LandingPageTemplate locale={locale} content={localeContent} page={page} body={content} />;
 }

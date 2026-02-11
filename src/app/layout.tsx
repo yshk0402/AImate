@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
+import "./globals.css";
+
 export const metadata: Metadata = {
-  title: "Corporate Site",
-  description: "AI-driven, Git-managed corporate website foundation"
+  title: "Field X",
+  description: "Field X corporate site"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,0 +1,51 @@
+:root {
+  --fx-red: #e10600;
+  --fx-red-deep: #b80400;
+  --fx-ink: #181313;
+  --fx-ink-soft: #4b3f3f;
+  --fx-bg: #f2edeb;
+  --fx-surface: var(--fx-bg);
+  --fx-surface-strong: #1f1717;
+  --fx-surface-light: var(--fx-bg);
+  --fx-surface-dark: #e10600;
+  --fx-text: var(--fx-ink);
+  --fx-text-muted: #6b5a5a;
+  --fx-text-on-dark: #fff5f2;
+  --fx-border: rgba(24, 19, 19, 0.24);
+  --fx-border-strong: rgba(24, 19, 19, 0.48);
+  --fx-line-light: var(--fx-border);
+  --fx-line-dark: rgba(255, 238, 233, 0.42);
+  --fx-header-height: 92px;
+  --fx-header-offset: clamp(10px, 1.6vw, 22px);
+  --fx-shell: 100%;
+  --fx-shell-max: 1440px;
+  --fx-content-max: 1200px;
+  --fx-shell-padding-x: clamp(14px, 3vw, 44px);
+  --fx-radius-sm: 10px;
+  --fx-radius-md: 18px;
+  --fx-radius-lg: 28px;
+  --fx-radius-xl: 40px;
+  --fx-radius-pill: 999px;
+  --fx-space-1: 0.4rem;
+  --fx-space-2: 0.6rem;
+  --fx-space-3: 0.9rem;
+  --fx-space-4: 1.2rem;
+  --fx-space-5: 1.6rem;
+  --fx-space-6: 2.3rem;
+  --fx-space-7: 3.3rem;
+  --fx-space-8: 4.8rem;
+  --fx-space-9: 6.4rem;
+  --fx-fs-body: clamp(1rem, 0.15vw + 0.97rem, 1.06rem);
+  --fx-fs-meta: clamp(0.78rem, 0.1vw + 0.76rem, 0.86rem);
+  --fx-fs-card-title: clamp(1.05rem, 0.45vw + 0.95rem, 1.32rem);
+  --fx-fs-section-title: clamp(2rem, 1.6vw + 1.58rem, 3.05rem);
+  --fx-fs-hero-title: clamp(2.35rem, 3.2vw + 1.6rem, 5.2rem);
+  --fx-lh-tight: 1.12;
+  --fx-lh-title: 1.18;
+  --fx-lh-body: 1.72;
+  --fx-font-body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  --fx-font-display: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
+  --fx-hero-min-h: calc(
+    100svh - var(--fx-header-height) - (var(--fx-header-offset) * 2)
+  );
+}
