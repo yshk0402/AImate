@@ -18,17 +18,19 @@ export function AboutOrganism({
   titleId = "home-about-title",
   headingLevel = "h2"
 }: AboutOrganismProps) {
+  const hasHeading = heading.trim().length > 0;
+
   return (
     <Surface
       as="section"
       id={sectionId}
       tone="light"
-      labelledBy={titleId}
+      labelledBy={hasHeading ? titleId : undefined}
       className="fx-section-organism fx-about-organism"
     >
       <div className="fx-shell">
-        <SectionHeader title={heading} titleId={titleId} level={headingLevel} />
-        <BodyText>{body}</BodyText>
+        {hasHeading ? <SectionHeader title={heading} titleId={titleId} level={headingLevel} /> : null}
+        <BodyText className="fx-about-body-emphasis">{body}</BodyText>
       </div>
     </Surface>
   );

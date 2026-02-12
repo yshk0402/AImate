@@ -10,7 +10,7 @@ export function AboutTemplate({ content }: AboutTemplateProps) {
     <>
       <AboutOrganism
         sectionId="about"
-        heading={content.about.heading}
+        heading={content.nav.about}
         body={content.about.body}
         titleId="about-page-who-we-are-title"
         headingLevel="h1"

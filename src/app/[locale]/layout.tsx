@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { SiteFooter, SiteHeader } from "@/components/organisms";
 import { siteContentByLocale } from "@/components/site/content";
-import { isLocale, localeLabel } from "@/lib/i18n/locales";
+import { isLocale } from "@/lib/i18n/locales";
 
 export async function generateMetadata({
   params
@@ -37,7 +37,6 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const alternateLocale = locale === "ja" ? "en" : "ja";
   const content = siteContentByLocale[locale];
 
   return (
@@ -46,8 +45,6 @@ export default async function LocaleLayout({
         locale={locale}
         company={content.company}
         nav={content.nav}
-        alternateHref={`/${alternateLocale}`}
-        alternateLabel={localeLabel(alternateLocale)}
       />
       <main className="fx-main-area">{children}</main>
       <SiteFooter company={content.company} />

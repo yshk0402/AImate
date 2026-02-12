@@ -4,6 +4,11 @@ export type ServiceCard = {
   category?: string;
   name: string;
   description: string;
+  slug?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
 };
 
 export type SectionTone = "light" | "dark";

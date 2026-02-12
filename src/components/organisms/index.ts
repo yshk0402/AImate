@@ -1,6 +1,7 @@
 export { AboutOrganism } from "./AboutOrganism";
 export { ContactOrganism } from "./ContactOrganism";
 export { HeroOrganism } from "./HeroOrganism";
+export { MobileHeaderMenu } from "./MobileHeaderMenu";
 export { NewsOrganism } from "./NewsOrganism";
 export { PoemOrganism } from "./PoemOrganism";
 export { SiteFooter } from "./SiteFooter";

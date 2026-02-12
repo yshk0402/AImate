@@ -54,9 +54,8 @@ export function HomeTemplate({ locale, content, posts }: HomeTemplateProps) {
         sectionId={SECTION_IDS.contact}
         heading={content.contact.heading}
         body={content.contact.body}
-        mailLabel={content.contact.mailLabel}
-        recruitLabel={content.contact.recruitLabel}
-        recruitHref={content.contact.recruitHref}
+        ctaLabel={content.contact.ctaLabel}
+        ctaHref={content.contact.ctaHref}
       />
     </>
   );

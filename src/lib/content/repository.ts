@@ -176,6 +176,9 @@ export async function getAllPublishedRoutes(): Promise<string[]> {
     routes.push(`/${locale}`);
     routes.push(`/${locale}/about`);
     routes.push(`/${locale}/blog`);
+    routes.push(`/${locale}/contact`);
+    routes.push(`/${locale}/what-we-do`);
+    routes.push(`/${locale}/news`);
 
     const [posts, pages] = await Promise.all([getBlogPosts(locale), getLandingPages(locale)]);
     routes.push(...posts.map((post) => `/${locale}/blog/${post.slug}`));

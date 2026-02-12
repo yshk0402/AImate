@@ -1,5 +1,7 @@
+import Link from "next/link";
+
 import { BodyText, Surface } from "@/components/atoms";
-import { ContactLinkRow, SectionHeader } from "@/components/molecules";
+import { SectionHeader } from "@/components/molecules";
 
 import type { HomeSection } from "@/types/site";
 
@@ -7,33 +9,36 @@ type ContactOrganismProps = {
   sectionId: HomeSection;
   heading: string;
   body: string;
-  mailLabel: string;
-  recruitLabel: string;
-  recruitHref: string;
+  ctaLabel: string;
+  ctaHref: string;
+  titleId?: string;
+  titleLevel?: "h1" | "h2" | "h3";
 };
 
 export function ContactOrganism({
   sectionId,
   heading,
   body,
-  mailLabel,
-  recruitLabel,
-  recruitHref
+  ctaLabel,
+  ctaHref,
+  titleId = "home-contact-title",
+  titleLevel = "h2"
 }: ContactOrganismProps) {
   return (
     <Surface
       as="section"
       id={sectionId}
       tone="light"
-      labelledBy="home-contact-title"
+      labelledBy={titleId}
       className="fx-section-organism fx-contact-organism"
     >
       <div className="fx-shell">
-        <SectionHeader title={heading} titleId="home-contact-title" />
+        <SectionHeader title={heading} titleId={titleId} level={titleLevel} />
         <BodyText>{body}</BodyText>
         <div className="fx-contact-links" aria-label={heading}>
-          <ContactLinkRow label={mailLabel} href="mailto:contact@fieldx.jp" text="contact@fieldx.jp" />
-          <ContactLinkRow label={recruitLabel} href={recruitHref} text={recruitLabel} />
+          <Link href={ctaHref} className="fx-about-cta">
+            {ctaLabel}
+          </Link>
         </div>
       </div>
     </Surface>

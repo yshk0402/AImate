@@ -1,4 +1,3 @@
-export { ContactLinkRow } from "./ContactLinkRow";
 export { GlobalNavList } from "./GlobalNavList";
 export { LocaleSwitcher } from "./LocaleSwitcher";
 export { NewsCard } from "./NewsCard";

@@ -1,5 +1,6 @@
 import { BrandWordmark } from "@/components/atoms";
-import { GlobalNavList, LocaleSwitcher } from "@/components/molecules";
+import { GlobalNavList } from "@/components/molecules";
+import { MobileHeaderMenu } from "./MobileHeaderMenu";
 
 type SiteHeaderProps = {
   locale: "ja" | "en";
@@ -10,28 +11,20 @@ type SiteHeaderProps = {
     news: string;
     contact: string;
   };
-  alternateHref: string;
-  alternateLabel: string;
 };
 
-export function SiteHeader({
-  locale,
-  company,
-  nav,
-  alternateHref,
-  alternateLabel
-}: SiteHeaderProps) {
+export function SiteHeader({ locale, company, nav }: SiteHeaderProps) {
   return (
     <header className="fx-site-header">
       <div className="fx-shell">
         <div className="fx-site-header-inner">
           <BrandWordmark locale={locale} company={company} />
-          <nav aria-label="Global" className="fx-site-nav">
-            <GlobalNavList locale={locale} nav={nav} />
-          </nav>
-          <div className="fx-site-header-action">
-            <LocaleSwitcher localeHref={alternateHref} label={alternateLabel} />
+          <div className="fx-site-header-desktop">
+            <nav aria-label="Global" className="fx-site-nav">
+              <GlobalNavList locale={locale} nav={nav} />
+            </nav>
           </div>
+          <MobileHeaderMenu locale={locale} nav={nav} />
         </div>
       </div>
     </header>

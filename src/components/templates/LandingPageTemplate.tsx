@@ -19,7 +19,7 @@ export function LandingPageTemplate({ locale, content, page, body }: LandingPage
           <BodyText>{page.description}</BodyText>
           {page.heroCta ? (
             <MetaText className="fx-lp-cta-text">
-              {content.lp.ctaLabel}: <TextAnchor href={`/${locale}/#contact`}>{page.heroCta}</TextAnchor>
+              {content.lp.ctaLabel}: <TextAnchor href={`/${locale}/contact`}>{page.heroCta}</TextAnchor>
             </MetaText>
           ) : null}
         </div>

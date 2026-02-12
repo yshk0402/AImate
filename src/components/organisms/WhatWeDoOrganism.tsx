@@ -1,15 +1,37 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { Surface } from "@/components/atoms";
 import { SectionHeader } from "@/components/molecules";
 
+import type { Locale } from "@/types/content";
 import type { HomeSection, ServiceCard as ServiceCardType } from "@/types/site";
 
 type WhatWeDoOrganismProps = {
   sectionId: HomeSection;
   heading: string;
   services: ServiceCardType[];
+  titleId?: string;
+  headingLevel?: "h1" | "h2" | "h3";
+  kicker?: string | null;
+  accentBackground?: boolean;
+  showMedia?: boolean;
+  locale?: Locale;
+  linkBasePath?: string;
 };
 
-export function WhatWeDoOrganism({ sectionId, heading, services }: WhatWeDoOrganismProps) {
+export function WhatWeDoOrganism({
+  sectionId,
+  heading,
+  services,
+  titleId = "home-services-title",
+  headingLevel = "h2",
+  kicker = "Business",
+  accentBackground = true,
+  showMedia = false,
+  locale,
+  linkBasePath = "what-we-do"
+}: WhatWeDoOrganismProps) {
   const groupedServices = services.reduce<Array<{ category: string; items: ServiceCardType[] }>>(
     (acc, service) => {
       const category = service.category ?? "Services";
@@ -31,27 +53,58 @@ export function WhatWeDoOrganism({ sectionId, heading, services }: WhatWeDoOrgan
       as="section"
       id={sectionId}
       tone="light"
-      labelledBy="home-services-title"
-      className="fx-section-organism fx-services-organism"
+      labelledBy={titleId}
+      className={[
+        "fx-section-organism",
+        "fx-services-organism",
+        showMedia ? "fx-services-organism-page" : null,
+        accentBackground ? "fx-services-organism-accent" : "fx-services-organism-default"
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <div className="fx-shell">
-        <SectionHeader title={heading} titleId="home-services-title" kicker="Buisiness" />
+        <SectionHeader title={heading} titleId={titleId} level={headingLevel} kicker={kicker ?? undefined} />
         <div className="fx-whatwedo-stack" aria-label={heading} role="list">
           {groupedServices.map((group) => (
             <article key={group.category} className="fx-whatwedo-group" role="listitem">
               <h3 className="fx-whatwedo-category">{group.category}</h3>
               <ul className="fx-whatwedo-list" aria-label={group.category}>
                 {group.items.map((service) => (
-                  <li key={service.name}>
-                    <article className="fx-whatwedo-item">
-                      <div>
-                        <h4 className="fx-whatwedo-item-title">{service.name}</h4>
-                        <p className="fx-whatwedo-item-body">{service.description}</p>
-                      </div>
-                      <span className="fx-whatwedo-arrow" aria-hidden="true">
-                        →
-                      </span>
-                    </article>
+                  <li key={service.slug ?? service.name}>
+                    {locale && service.slug ? (
+                      <Link href={`/${locale}/${linkBasePath}/${service.slug}`} className="fx-whatwedo-item-link">
+                        <article className={showMedia ? "fx-whatwedo-item fx-whatwedo-item-media" : "fx-whatwedo-item"}>
+                          <div className="fx-whatwedo-item-content">
+                            <h4 className="fx-whatwedo-item-title">{service.name}</h4>
+                            <p className="fx-whatwedo-item-body">{service.description}</p>
+                          </div>
+                          {showMedia && service.image ? (
+                            <figure className="fx-whatwedo-item-image">
+                              <Image src={service.image.src} alt={service.image.alt} width={280} height={168} />
+                            </figure>
+                          ) : null}
+                          <span className="fx-whatwedo-arrow" aria-hidden="true">
+                            →
+                          </span>
+                        </article>
+                      </Link>
+                    ) : (
+                      <article className={showMedia ? "fx-whatwedo-item fx-whatwedo-item-media" : "fx-whatwedo-item"}>
+                        <div className="fx-whatwedo-item-content">
+                          <h4 className="fx-whatwedo-item-title">{service.name}</h4>
+                          <p className="fx-whatwedo-item-body">{service.description}</p>
+                        </div>
+                        {showMedia && service.image ? (
+                          <figure className="fx-whatwedo-item-image">
+                            <Image src={service.image.src} alt={service.image.alt} width={280} height={168} />
+                          </figure>
+                        ) : null}
+                        <span className="fx-whatwedo-arrow" aria-hidden="true">
+                          →
+                        </span>
+                      </article>
+                    )}
                   </li>
                 ))}
               </ul>

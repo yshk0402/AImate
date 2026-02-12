@@ -10,6 +10,8 @@ type NewsOrganismProps = {
   emptyLabel: string;
   locale: "ja" | "en";
   posts: BlogPost[];
+  titleId?: string;
+  headingLevel?: "h1" | "h2" | "h3";
 };
 
 export function NewsOrganism({
@@ -17,12 +19,14 @@ export function NewsOrganism({
   heading,
   emptyLabel,
   locale,
-  posts
+  posts,
+  titleId = "home-news-title",
+  headingLevel = "h2"
 }: NewsOrganismProps) {
   return (
-    <Surface as="section" id={sectionId} tone="light" labelledBy="home-news-title" className="fx-section-organism">
+    <Surface as="section" id={sectionId} tone="light" labelledBy={titleId} className="fx-section-organism">
       <div className="fx-shell">
-        <SectionHeader title={heading} titleId="home-news-title" />
+        <SectionHeader title={heading} titleId={titleId} level={headingLevel} />
 
         {posts.length === 0 ? (
           <BodyText>{emptyLabel}</BodyText>

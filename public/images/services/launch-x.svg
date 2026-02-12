@@ -1,0 +1,13 @@
+<svg width="1280" height="768" viewBox="0 0 1280 768" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Launch X Placeholder</title>
+  <desc id="desc">Abstract placeholder graphic for Launch X service.</desc>
+  <rect width="1280" height="768" fill="#F7F2F0"/>
+  <path d="M0 588C194 512 340 480 640 512C872 538 1098 630 1280 706V768H0V588Z" fill="#E10600" fill-opacity="0.15"/>
+  <rect x="124" y="118" width="1032" height="500" rx="24" fill="#FFFFFF" stroke="#E8DAD6" stroke-width="8"/>
+  <path d="M320 478L582 216L778 412L968 258" stroke="#E10600" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M926 258H968V300" stroke="#E10600" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="320" cy="478" r="22" fill="#1E1A1A" fill-opacity="0.18"/>
+  <circle cx="582" cy="216" r="22" fill="#1E1A1A" fill-opacity="0.18"/>
+  <circle cx="778" cy="412" r="22" fill="#1E1A1A" fill-opacity="0.18"/>
+  <circle cx="968" cy="258" r="22" fill="#E10600" fill-opacity="0.62"/>
+</svg>

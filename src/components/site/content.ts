@@ -39,9 +39,8 @@ export type SiteLocaleContent = {
   contact: {
     heading: string;
     body: string;
-    mailLabel: string;
-    recruitLabel: string;
-    recruitHref: string;
+    ctaLabel: string;
+    ctaHref: string;
   };
   blog: {
     heading: string;
@@ -70,7 +69,7 @@ export const siteContentByLocale: Record<Locale, SiteLocaleContent> = {
       body: ""
     },
     poem: {
-      heading: "Who We Are",
+      heading: "",
       body: `AIが進化し、個人でも起業できる時代。
 それでも、私たちはチームである意味を追求する。
 
@@ -84,7 +83,7 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
       aboutCtaLabel: "About→"
     },
     about: {
-      heading: "Who We Are",
+      heading: "",
       body: "Field Xは高専出身の二人によって立ち上げられたスタートアップです。合理化が進むこの時代に、様々な分野で事業創造を続け、集団で有り続けることの価値を証明します。"
     },
     whatWeDo: {
@@ -93,17 +92,32 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
         {
           category: "AI DX 事業",
           name: "Operates X",
-          description: "業務フローを再設計し、AIを実装して現場に定着させる。"
+          description: "業務フローを再設計し、AIを実装して現場に定着させる。",
+          slug: "operates-x",
+          image: {
+            src: "/images/services/operates-x.svg",
+            alt: "Operates X service visual"
+          }
         },
         {
           category: "AI DX 事業",
           name: "Launch X",
-          description: "企画から公開までを最短で。あなたのアイデア実装をAIでエンパワーメントします。"
+          description: "企画から公開までを最短で。あなたのアイデア実装をAIでエンパワーメントします。",
+          slug: "launch-x",
+          image: {
+            src: "/images/services/launch-x.svg",
+            alt: "Launch X service visual"
+          }
         },
         {
           category: "教育 事業",
           name: "高専ジョブ",
-          description: "高専生のための、高専生によるキャリアサービス"
+          description: "高専生のための、高専生によるキャリアサービス",
+          slug: "kosen-job",
+          image: {
+            src: "/images/services/kosen-job.svg",
+            alt: "高専ジョブ service visual"
+          }
         }
       ]
     },
@@ -119,10 +133,9 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
     },
     contact: {
       heading: "Contact",
-      body: "ご相談・協業・採用に関するお問い合わせはこちら。",
-      mailLabel: "メール",
-      recruitLabel: "採用情報",
-      recruitHref: "/ja/blog"
+      body: "ご相談・協業に関するお問い合わせはこちら。",
+      ctaLabel: "お問い合わせはこちら",
+      ctaHref: "/ja/contact"
     },
     blog: {
       heading: "Blog",
@@ -149,12 +162,12 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
       body: "In an age of relentless optimization, we keep creating businesses across domains and prove the value of building as a collective."
     },
     poem: {
-      heading: "Who We Are",
+      heading: "",
       body: "A placeholder poem goes here for now.",
       aboutCtaLabel: "About→"
     },
     about: {
-      heading: "Who We Are",
+      heading: "",
       body: "Field X is a startup founded by two KOSEN alumni. In an age of relentless optimization, we continue creating businesses across domains and prove the value of building as a collective."
     },
     whatWeDo: {
@@ -163,17 +176,32 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
         {
           category: "AI DX 事業",
           name: "Operates X",
-          description: "Redesign workflows, implement AI, and anchor it in daily operations."
+          description: "Redesign workflows, implement AI, and anchor it in daily operations.",
+          slug: "operates-x",
+          image: {
+            src: "/images/services/operates-x.svg",
+            alt: "Operates X service visual"
+          }
         },
         {
           category: "AI DX 事業",
           name: "Launch X",
-          description: "From concept to launch at speed. We empower your ideas through AI-driven implementation."
+          description: "From concept to launch at speed. We empower your ideas through AI-driven implementation.",
+          slug: "launch-x",
+          image: {
+            src: "/images/services/launch-x.svg",
+            alt: "Launch X service visual"
+          }
         },
         {
           category: "教育 事業",
           name: "Kosen Job",
-          description: "A career service by KOSEN students, for KOSEN students."
+          description: "A career service by KOSEN students, for KOSEN students.",
+          slug: "kosen-job",
+          image: {
+            src: "/images/services/kosen-job.svg",
+            alt: "Kosen Job service visual"
+          }
         }
       ]
     },
@@ -193,10 +221,9 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
     },
     contact: {
       heading: "Contact",
-      body: "For projects, collaborations, or hiring inquiries, reach out here.",
-      mailLabel: "Email",
-      recruitLabel: "Recruit",
-      recruitHref: "/en/blog"
+      body: "For project and collaboration inquiries, reach out here.",
+      ctaLabel: "Contact Us",
+      ctaHref: "/en/contact"
     },
     blog: {
       heading: "Blog",

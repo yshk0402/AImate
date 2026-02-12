@@ -12,10 +12,18 @@ type PoemOrganismProps = {
 };
 
 export function PoemOrganism({ sectionId, heading, body, aboutCtaLabel, aboutHref }: PoemOrganismProps) {
+  const hasHeading = heading.trim().length > 0;
+
   return (
-    <Surface as="section" id={sectionId} tone="light" labelledBy="home-poem-title" className="fx-poem-organism">
+    <Surface
+      as="section"
+      id={sectionId}
+      tone="light"
+      labelledBy={hasHeading ? "home-poem-title" : undefined}
+      className="fx-poem-organism"
+    >
       <div className="fx-shell fx-poem-shell">
-        <SectionHeader title={heading} titleId="home-poem-title" />
+        {hasHeading ? <SectionHeader title={heading} titleId="home-poem-title" /> : null}
         <p id="home-poem-text" className="fx-body-text fx-poem-body">
           {body}
         </p>
