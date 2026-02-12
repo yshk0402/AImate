@@ -157,7 +157,6 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
           category: "AI DX 事業",
           name: "Launch X",
           description: "企画から公開までを最短で。あなたのアイデア実装をAIでエンパワーメントします。",
-          slug: "launch-x",
           image: {
             src: "/images/services/launch-x.svg",
             alt: "Launch X service visual"
@@ -167,7 +166,6 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
           category: "教育 事業",
           name: "高専ジョブ",
           description: "高専生のための、高専生によるキャリアサービス",
-          slug: "kosen-job",
           image: {
             src: "/images/services/kosen-job.svg",
             alt: "高専ジョブ service visual"
@@ -300,7 +298,6 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
           category: "AI DX 事業",
           name: "Launch X",
           description: "From concept to launch at speed. We empower your ideas through AI-driven implementation.",
-          slug: "launch-x",
           image: {
             src: "/images/services/launch-x.svg",
             alt: "Launch X service visual"
@@ -310,7 +307,6 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
           category: "教育 事業",
           name: "Kosen Job",
           description: "A career service by KOSEN students, for KOSEN students.",
-          slug: "kosen-job",
           image: {
             src: "/images/services/kosen-job.svg",
             alt: "Kosen Job service visual"

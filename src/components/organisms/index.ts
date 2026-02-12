@@ -9,5 +9,6 @@ export { NewsOrganism } from "./NewsOrganism";
 export { PoemOrganism } from "./PoemOrganism";
 export { SiteFooter } from "./SiteFooter";
 export { SiteHeader } from "./SiteHeader";
+export { ServiceCaseCarousel } from "./ServiceCaseCarousel";
 export { TeamOrganism } from "./TeamOrganism";
 export { WhatWeDoOrganism } from "./WhatWeDoOrganism";
