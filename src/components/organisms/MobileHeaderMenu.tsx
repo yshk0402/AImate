@@ -82,6 +82,7 @@ export function MobileHeaderMenu({ locale, nav }: MobileHeaderMenuProps) {
               <GlobalNavList
                 locale={locale}
                 nav={nav}
+                enableAboutDropdown={false}
                 className="fx-global-nav-list fx-global-nav-list-mobile"
                 onNavigate={closeMenu}
               />

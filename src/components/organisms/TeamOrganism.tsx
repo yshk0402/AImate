@@ -7,25 +7,43 @@ type TeamOrganismProps = {
   sectionId: HomeSection;
   heading: string;
   body: string;
-  points: string[];
+  members: {
+    name: string;
+    role: string;
+    bio: string;
+    imageSrc: string;
+    imageAlt: string;
+  }[];
   titleId?: string;
 };
 
 export function TeamOrganism({
   sectionId,
   heading,
-  body,
-  points,
+  members,
   titleId = "home-team-title"
 }: TeamOrganismProps) {
   return (
     <Surface as="section" id={sectionId} tone="light" labelledBy={titleId} className="fx-section-organism">
       <div className="fx-shell">
         <SectionHeader title={heading} titleId={titleId} />
-        <BodyText>{body}</BodyText>
-        <ul className="fx-team-points" aria-label={heading}>
-          {points.map((point) => (
-            <li key={point}>{point}</li>
+        <ul className="fx-team-grid" aria-label={heading}>
+          {members.map((member) => (
+            <li key={member.name} className="fx-team-card">
+              <img
+                className="fx-team-avatar"
+                src={member.imageSrc}
+                alt={member.imageAlt}
+                width={240}
+                height={240}
+                loading="lazy"
+              />
+              <div>
+                <h3 className="fx-team-name">{member.name}</h3>
+                <p className="fx-team-role">{member.role}</p>
+                <BodyText className="fx-team-bio">{member.bio}</BodyText>
+              </div>
+            </li>
           ))}
         </ul>
       </div>

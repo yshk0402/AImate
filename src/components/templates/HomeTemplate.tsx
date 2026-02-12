@@ -7,8 +7,11 @@ const SECTION_IDS: Record<HomeSection, HomeSection> = {
   hero: "hero",
   poem: "poem",
   about: "about",
+  mvv: "mvv",
   "what-we-do": "what-we-do",
   team: "team",
+  history: "history",
+  "company-profile": "company-profile",
   news: "news",
   contact: "contact"
 };

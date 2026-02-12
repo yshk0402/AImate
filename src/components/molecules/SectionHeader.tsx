@@ -6,6 +6,8 @@ type SectionHeaderProps = {
   kicker?: string;
   level?: "h1" | "h2" | "h3";
   className?: string;
+  anchorHref?: string;
+  anchorLabel?: string;
 };
 
 export function SectionHeader({
@@ -13,14 +15,23 @@ export function SectionHeader({
   titleId,
   kicker,
   level = "h2",
-  className
+  className,
+  anchorHref,
+  anchorLabel
 }: SectionHeaderProps) {
   return (
     <header className={className ?? "fx-section-header"}>
       {kicker ? <SectionKicker text={kicker} /> : null}
-      <SectionTitle as={level} id={titleId} className={level === "h1" ? "fx-hero-title" : "fx-section-title"}>
-        {title}
-      </SectionTitle>
+      <div className="fx-section-title-row">
+        <SectionTitle as={level} id={titleId} className={level === "h1" ? "fx-hero-title" : "fx-section-title"}>
+          {title}
+        </SectionTitle>
+        {anchorHref ? (
+          <a className="fx-section-anchor" href={anchorHref} aria-label={anchorLabel ?? `${title} anchor link`}>
+            #
+          </a>
+        ) : null}
+      </div>
     </header>
   );
 }

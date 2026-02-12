@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { z } from "zod";
 
 import { LOCALES } from "@/lib/i18n/locales";
+import { siteContentByLocale } from "@/components/site/content";
 import type {
   BlogFrontmatter,
   BlogPost,
@@ -179,6 +180,12 @@ export async function getAllPublishedRoutes(): Promise<string[]> {
     routes.push(`/${locale}/contact`);
     routes.push(`/${locale}/what-we-do`);
     routes.push(`/${locale}/news`);
+    routes.push(
+      ...siteContentByLocale[locale].whatWeDo.services
+        .map((service) => service.slug)
+        .filter((slug): slug is string => Boolean(slug))
+        .map((slug) => `/${locale}/what-we-do/${slug}`)
+    );
 
     const [posts, pages] = await Promise.all([getBlogPosts(locale), getLandingPages(locale)]);
     routes.push(...posts.map((post) => `/${locale}/blog/${post.slug}`));

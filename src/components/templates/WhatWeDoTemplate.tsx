@@ -12,6 +12,7 @@ export function WhatWeDoTemplate({ locale, content }: WhatWeDoTemplateProps) {
     <WhatWeDoOrganism
       sectionId="what-we-do"
       heading={content.nav.whatWeDo}
+      intro={content.whatWeDo.intro}
       services={content.whatWeDo.services}
       titleId="what-we-do-page-title"
       headingLevel="h1"

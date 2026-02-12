@@ -45,9 +45,19 @@ export default async function LocaleLayout({
         locale={locale}
         company={content.company}
         nav={content.nav}
+        aboutSectionNav={{
+          mvv: content.mvv.heading,
+          team: content.team.heading,
+          history: content.history.heading,
+          companyProfile: content.companyProfile.heading
+        }}
+        whatWeDoSectionNav={{
+          aiDx: locale === "ja" ? "AI DX事業" : "AI DX",
+          education: locale === "ja" ? "教育事業" : "Education"
+        }}
       />
       <main className="fx-main-area">{children}</main>
-      <SiteFooter company={content.company} />
+      <SiteFooter company={content.company} locale={locale} />
     </>
   );
 }

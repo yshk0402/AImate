@@ -29,7 +29,13 @@ export function AboutOrganism({
       className="fx-section-organism fx-about-organism"
     >
       <div className="fx-shell">
-        {hasHeading ? <SectionHeader title={heading} titleId={titleId} level={headingLevel} /> : null}
+        {hasHeading ? (
+          <SectionHeader
+            title={heading}
+            titleId={titleId}
+            level={headingLevel}
+          />
+        ) : null}
         <BodyText className="fx-about-body-emphasis">{body}</BodyText>
       </div>
     </Surface>

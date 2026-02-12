@@ -1,4 +1,14 @@
-export type HomeSection = "hero" | "poem" | "about" | "what-we-do" | "team" | "news" | "contact";
+export type HomeSection =
+  | "hero"
+  | "poem"
+  | "about"
+  | "mvv"
+  | "what-we-do"
+  | "team"
+  | "history"
+  | "company-profile"
+  | "news"
+  | "contact";
 
 export type ServiceCard = {
   category?: string;
