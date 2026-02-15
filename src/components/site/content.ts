@@ -1,4 +1,3 @@
-import type { Locale } from "@/types/content";
 import type { ServiceCard } from "@/types/site";
 
 export type SiteLocaleContent = {
@@ -84,8 +83,7 @@ export type SiteLocaleContent = {
   };
 };
 
-export const siteContentByLocale: Record<Locale, SiteLocaleContent> = {
-  ja: {
+export const siteContent: SiteLocaleContent = {
     company: "Field X",
     nav: {
       about: "About",
@@ -227,7 +225,7 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
       heading: "Contact",
       body: "ご相談・協業に関するお問い合わせはこちら。",
       ctaLabel: "お問い合わせはこちら",
-      ctaHref: "/ja/contact"
+      ctaHref: "/contact"
     },
     blog: {
       heading: "Blog",
@@ -240,146 +238,4 @@ Field Xは、AIと人の力で社会を前進させるスタートアップで�
       eyebrow: "Landing Page",
       ctaLabel: "CTA"
     }
-  },
-  en: {
-    company: "Field X",
-    nav: {
-      about: "About",
-      whatWeDo: "What We Do",
-      news: "News",
-      contact: "Contact"
-    },
-    hero: {
-      title: "At the center of capitalism, we keep the festival eve alive.",
-      body: "In an age of relentless optimization, we keep creating businesses across domains and prove the value of building as a collective."
-    },
-    poem: {
-      heading: "",
-      body: "A placeholder poem goes here for now.",
-      aboutCtaLabel: "About→"
-    },
-    about: {
-      heading: "",
-      body: "Field X is a startup founded by two KOSEN alumni. In an age of relentless optimization, we continue creating businesses across domains and prove the value of building as a collective."
-    },
-    mvv: {
-      heading: "MVV",
-      items: [
-        {
-          label: "Mission",
-          body: "Advance real-world problem solving and new value creation through collaboration between AI and people."
-        },
-        {
-          label: "Vision",
-          body: "Build an environment where challengers can continuously tackle unresolved social issues."
-        },
-        {
-          label: "Value",
-          body: "Operate with Ownership, Speed, and Field Focus, delivering from strategy through implementation."
-        }
-      ]
-    },
-    whatWeDo: {
-      heading: "What We Do",
-      intro:
-        "X stands for unnamed challenges and unresolved social issues. We execute creative business development to solve X across diverse domains.",
-      services: [
-        {
-          category: "AI DX 事業",
-          name: "Operates X",
-          description: "Redesign workflows, implement AI, and anchor it in daily operations.",
-          slug: "operates-x",
-          image: {
-            src: "/images/services/operates-x.svg",
-            alt: "Operates X service visual"
-          }
-        },
-        {
-          category: "AI DX 事業",
-          name: "Launch X",
-          description: "From concept to launch at speed. We empower your ideas through AI-driven implementation.",
-          image: {
-            src: "/images/services/launch-x.svg",
-            alt: "Launch X service visual"
-          }
-        },
-        {
-          category: "教育 事業",
-          name: "Kosen Job",
-          description: "A career service by KOSEN students, for KOSEN students.",
-          image: {
-            src: "/images/services/kosen-job.svg",
-            alt: "Kosen Job service visual"
-          }
-        }
-      ]
-    },
-    team: {
-      heading: "Team",
-      body: "A small team with cross-functional expertise, committed to implementation end-to-end.",
-      members: [
-        {
-          name: "Yusuke",
-          role: "Co-Founder / Product",
-          bio: "Leads business design and product execution, focusing on early customer value creation.",
-          imageSrc: "/images/team/member-placeholder.svg",
-          imageAlt: "Yusuke profile placeholder"
-        },
-        {
-          name: "Shun",
-          role: "Co-Founder / Engineering",
-          bio: "Owns technical strategy and implementation, shipping production-ready systems for operations.",
-          imageSrc: "/images/team/member-placeholder.svg",
-          imageAlt: "Shun profile placeholder"
-        },
-        {
-          name: "Kaede",
-          role: "Operations",
-          bio: "Supports project operations and client communication to sustain reliable delivery.",
-          imageSrc: "/images/team/member-placeholder.svg",
-          imageAlt: "Kaede profile placeholder"
-        }
-      ]
-    },
-    history: {
-      heading: "History",
-      items: [
-        { year: "2025.04", detail: "Field X was founded." },
-        { year: "2025.08", detail: "Launched the AI DX service Operates X." },
-        { year: "2026.01", detail: "Released Kosen Job as an education business." }
-      ]
-    },
-    companyProfile: {
-      heading: "Company Profile",
-      items: [
-        { label: "Company", value: "Field X Inc." },
-        { label: "Founded", value: "April 2025" },
-        { label: "Location", value: "Tokyo, Japan (remote-first)" },
-        { label: "Business", value: "AI DX / Education" },
-        { label: "Management", value: "Co-CEOs" }
-      ]
-    },
-    news: {
-      heading: "Latest News",
-      empty: "No published news yet.",
-      publishedLabel: "Published"
-    },
-    contact: {
-      heading: "Contact",
-      body: "For project and collaboration inquiries, reach out here.",
-      ctaLabel: "Contact Us",
-      ctaHref: "/en/contact"
-    },
-    blog: {
-      heading: "Blog",
-      description: "Only content marked as published is listed here.",
-      empty: "No published posts yet.",
-      listAriaLabel: "Blog posts list",
-      publishedLabel: "Published"
-    },
-    lp: {
-      eyebrow: "Landing Page",
-      ctaLabel: "CTA"
-    }
-  }
 };

@@ -5,7 +5,6 @@ import { useEffect, useId, useRef, useState } from "react";
 import { GlobalNavList } from "@/components/molecules";
 
 type MobileHeaderMenuProps = {
-  locale: "ja" | "en";
   nav: {
     about: string;
     whatWeDo: string;
@@ -14,7 +13,7 @@ type MobileHeaderMenuProps = {
   };
 };
 
-export function MobileHeaderMenu({ locale, nav }: MobileHeaderMenuProps) {
+export function MobileHeaderMenu({ nav }: MobileHeaderMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = useId();
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -80,7 +79,6 @@ export function MobileHeaderMenu({ locale, nav }: MobileHeaderMenuProps) {
           <div id={panelId} ref={panelRef} className="fx-mobile-menu-panel">
             <nav aria-label="Mobile Global">
               <GlobalNavList
-                locale={locale}
                 nav={nav}
                 enableAboutDropdown={false}
                 className="fx-global-nav-list fx-global-nav-list-mobile"

@@ -8,7 +8,6 @@ type NewsOrganismProps = {
   sectionId: HomeSection;
   heading: string;
   emptyLabel: string;
-  locale: "ja" | "en";
   posts: BlogPost[];
   titleId?: string;
   headingLevel?: "h1" | "h2" | "h3";
@@ -18,7 +17,6 @@ export function NewsOrganism({
   sectionId,
   heading,
   emptyLabel,
-  locale,
   posts,
   titleId = "home-news-title",
   headingLevel = "h2"
@@ -34,7 +32,7 @@ export function NewsOrganism({
           <ul className="fx-news-grid fx-news-grid--latest" aria-label={heading}>
             {posts.map((post) => (
               <li key={post.slug}>
-                <NewsCard locale={locale} post={post} />
+                <NewsCard post={post} />
               </li>
             ))}
           </ul>

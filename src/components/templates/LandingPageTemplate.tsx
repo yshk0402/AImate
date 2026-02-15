@@ -4,13 +4,12 @@ import type { SiteLocaleContent } from "@/components/site/content";
 import type { LandingPage } from "@/types/content";
 
 type LandingPageTemplateProps = {
-  locale: "ja" | "en";
   content: SiteLocaleContent;
   page: LandingPage;
   body: React.ReactNode;
 };
 
-export function LandingPageTemplate({ locale, content, page, body }: LandingPageTemplateProps) {
+export function LandingPageTemplate({ content, page, body }: LandingPageTemplateProps) {
   return (
     <article>
       <Surface as="section" tone="light" labelledBy="lp-title" className="fx-page-section fx-lp-hero">
@@ -19,7 +18,7 @@ export function LandingPageTemplate({ locale, content, page, body }: LandingPage
           <BodyText>{page.description}</BodyText>
           {page.heroCta ? (
             <MetaText className="fx-lp-cta-text">
-              {content.lp.ctaLabel}: <TextAnchor href={`/${locale}/contact`}>{page.heroCta}</TextAnchor>
+              {content.lp.ctaLabel}: <TextAnchor href="/contact">{page.heroCta}</TextAnchor>
             </MetaText>
           ) : null}
         </div>

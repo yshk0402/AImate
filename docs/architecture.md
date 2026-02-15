@@ -10,7 +10,7 @@ Deliver a flexible corporate site that supports rapid publishing of blogs and la
 - Publication controlled by `status: draft|published`
 
 ## Runtime Flow
-1. Route receives locale and slug/campaign.
+1. Route receives slug/campaign.
 2. Repository loader reads MDX file from `content/*`.
 3. Frontmatter is validated.
 4. Non-published content is excluded.
@@ -19,4 +19,19 @@ Deliver a flexible corporate site that supports rapid publishing of blogs and la
 ## Extensibility
 - Add new content types by introducing a new folder under `content/` and a corresponding schema.
 - Add shared UI by extending `src/components`.
-- Add new locale by updating locale constants and content directories.
+
+## Multi-Domain Structure
+- Primary corporate app lives at repository root (`src/app`).
+- Operates X standalone app lives at `apps/operates-x`.
+- Deploy them as two different Vercel projects using different Root Directory settings.
+- This keeps both codebases in one repository while allowing separate domains and release cadence.
+
+## Release Phase Control
+- Runtime mode is controlled by `SITE_RELEASE_PHASE`.
+- `full` keeps the regular site behavior and route availability.
+- `prelaunch_operates_x` enables prelaunch mode:
+  - `/` renders Operates X as a standalone page.
+  - Global navigation/header/footer are hidden.
+  - Non-allowed routes are closed by middleware with `404` (files remain in repository).
+  - `sitemap.xml` only lists `/` and `/contact`.
+- Switch back to `SITE_RELEASE_PHASE=full` to restore all routes without code rollback.

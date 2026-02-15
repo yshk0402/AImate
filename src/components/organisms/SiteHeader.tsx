@@ -3,7 +3,6 @@ import { GlobalNavList } from "@/components/molecules";
 import { MobileHeaderMenu } from "./MobileHeaderMenu";
 
 type SiteHeaderProps = {
-  locale: "ja" | "en";
   company: string;
   nav: {
     about: string;
@@ -23,23 +22,18 @@ type SiteHeaderProps = {
   };
 };
 
-export function SiteHeader({ locale, company, nav, aboutSectionNav, whatWeDoSectionNav }: SiteHeaderProps) {
+export function SiteHeader({ company, nav, aboutSectionNav, whatWeDoSectionNav }: SiteHeaderProps) {
   return (
     <header className="fx-site-header">
       <div className="fx-shell">
         <div className="fx-site-header-inner">
-          <BrandWordmark locale={locale} company={company} />
+          <BrandWordmark company={company} />
           <div className="fx-site-header-desktop">
             <nav aria-label="Global" className="fx-site-nav">
-              <GlobalNavList
-                locale={locale}
-                nav={nav}
-                aboutSectionNav={aboutSectionNav}
-                whatWeDoSectionNav={whatWeDoSectionNav}
-              />
+              <GlobalNavList nav={nav} aboutSectionNav={aboutSectionNav} whatWeDoSectionNav={whatWeDoSectionNav} />
             </nav>
           </div>
-          <MobileHeaderMenu locale={locale} nav={nav} />
+          <MobileHeaderMenu nav={nav} />
         </div>
       </div>
     </header>

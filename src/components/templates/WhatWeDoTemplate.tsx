@@ -1,13 +1,11 @@
 import { WhatWeDoOrganism } from "@/components/organisms";
 import type { SiteLocaleContent } from "@/components/site/content";
-import type { Locale } from "@/types/content";
 
 type WhatWeDoTemplateProps = {
-  locale: Locale;
   content: SiteLocaleContent;
 };
 
-export function WhatWeDoTemplate({ locale, content }: WhatWeDoTemplateProps) {
+export function WhatWeDoTemplate({ content }: WhatWeDoTemplateProps) {
   return (
     <WhatWeDoOrganism
       sectionId="what-we-do"
@@ -19,7 +17,6 @@ export function WhatWeDoTemplate({ locale, content }: WhatWeDoTemplateProps) {
       kicker={null}
       accentBackground={false}
       showMedia
-      locale={locale}
       linkBasePath="what-we-do"
     />
   );

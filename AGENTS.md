@@ -9,7 +9,7 @@ The goal is to ship blog content and landing pages rapidly while keeping all sou
 - Package manager: pnpm
 - Hosting target: Vercel
 - Content source: MDX + frontmatter (no CMS)
-- Locales: `ja`, `en`
+- Language: Japanese only
 
 ## Standard Commands
 - Install: `pnpm install`
@@ -25,8 +25,8 @@ The goal is to ship blog content and landing pages rapidly while keeping all sou
 - If a change is breaking, document impact and migration steps in PR description.
 
 ## Content Placement Rules
-- Blog content: `content/blog/{locale}/*.mdx`
-- Landing pages: `content/lp/{locale}/*.mdx`
+- Blog content: `content/blog/*.mdx`
+- Landing pages: `content/lp/*.mdx`
 - Public images: `public/images/*`
 
 ## Frontmatter Requirements
@@ -35,7 +35,6 @@ Required fields:
 - `title`
 - `description`
 - `slug`
-- `locale` (`ja` | `en`)
 - `status` (`draft` | `published`)
 
 Optional fields:
@@ -48,7 +47,6 @@ Required fields:
 - `title`
 - `description`
 - `campaign`
-- `locale` (`ja` | `en`)
 - `status` (`draft` | `published`)
 
 Optional fields:
@@ -60,10 +58,8 @@ Optional fields:
 - Only `status: published` appears in list/detail/sitemap output.
 - `draft` content is kept in Git but hidden from production output.
 
-## i18n Rules
-- Route format: `/{locale}/...`
-- Allowed locales: `ja`, `en`
-- Keep slug/campaign parity across `ja` and `en` when possible.
+## Routing Rules
+- Route format: `/...` (no locale prefix)
 
 ## Landing Page Checklist
 Before publishing an LP:

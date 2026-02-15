@@ -2,12 +2,11 @@ import { BodyText, MetaText, SectionTitle, TextAnchor } from "@/components/atoms
 import type { BlogPost } from "@/types/content";
 
 type NewsCardProps = {
-  locale: "ja" | "en";
   post: BlogPost;
 };
 
-export function NewsCard({ locale, post }: NewsCardProps) {
-  const tagLabel = post.tags?.[0] ?? (locale === "ja" ? "リリース" : "Release");
+export function NewsCard({ post }: NewsCardProps) {
+  const tagLabel = post.tags?.[0] ?? "リリース";
 
   return (
     <article className="fx-news-card">
@@ -16,7 +15,7 @@ export function NewsCard({ locale, post }: NewsCardProps) {
       </div>
       <p className="fx-news-tag">{tagLabel}</p>
       <SectionTitle as="h3" className="fx-card-title">
-        <TextAnchor href={`/${locale}/blog/${post.slug}`}>{post.title}</TextAnchor>
+        <TextAnchor href={`/blog/${post.slug}`}>{post.title}</TextAnchor>
       </SectionTitle>
       {post.publishedAt ? (
         <MetaText>

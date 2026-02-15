@@ -8,18 +8,10 @@ type LatestNewsSectionProps = {
   heading: string;
   emptyLabel: string;
   publishedLabel: string;
-  locale: "ja" | "en";
   posts: BlogPost[];
 };
 
-export function LatestNewsSection({
-  sectionId,
-  heading,
-  emptyLabel,
-  publishedLabel,
-  locale,
-  posts
-}: LatestNewsSectionProps) {
+export function LatestNewsSection({ sectionId, heading, emptyLabel, publishedLabel, posts }: LatestNewsSectionProps) {
   return (
     <section id={sectionId} className="fx-section" aria-labelledby="fx-news-title">
       <h2 id="fx-news-title">{heading}</h2>
@@ -32,7 +24,7 @@ export function LatestNewsSection({
             <li key={post.slug}>
               <article className="fx-news-card">
                 <h3>
-                  <Link href={`/${locale}/blog/${post.slug}`}>{post.title}</Link>
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
                 <p>{post.description}</p>
                 {post.publishedAt ? (

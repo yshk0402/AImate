@@ -16,6 +16,6 @@ Keep AI-generated changes reliable and reviewable.
 4. Summarize change + affected files
 
 ## Review Checklist
-- Does the change preserve locale routing?
+- Does the change preserve flat routing conventions?
 - Does it keep `draft/published` behavior intact?
 - Does it update documentation if structure changed?

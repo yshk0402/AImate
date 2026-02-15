@@ -1,11 +1,9 @@
-export type Locale = "ja" | "en";
 export type PublishStatus = "draft" | "published";
 
 export type BlogFrontmatter = {
   title: string;
   description: string;
   slug: string;
-  locale: Locale;
   status: PublishStatus;
   publishedAt?: string;
   tags?: string[];
@@ -16,7 +14,6 @@ export type LandingPageFrontmatter = {
   title: string;
   description: string;
   campaign: string;
-  locale: Locale;
   status: PublishStatus;
   publishedAt?: string;
   heroCta?: string;

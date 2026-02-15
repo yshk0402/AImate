@@ -4,7 +4,6 @@ import Link from "next/link";
 import { BodyText, Surface } from "@/components/atoms";
 import { SectionHeader } from "@/components/molecules";
 
-import type { Locale } from "@/types/content";
 import type { HomeSection, ServiceCard as ServiceCardType } from "@/types/site";
 
 type WhatWeDoOrganismProps = {
@@ -17,7 +16,6 @@ type WhatWeDoOrganismProps = {
   kicker?: string | null;
   accentBackground?: boolean;
   showMedia?: boolean;
-  locale?: Locale;
   linkBasePath?: string;
 };
 
@@ -31,7 +29,6 @@ export function WhatWeDoOrganism({
   kicker = "Business",
   accentBackground = true,
   showMedia = false,
-  locale,
   linkBasePath = "what-we-do"
 }: WhatWeDoOrganismProps) {
   const groupedServices = services.reduce<Array<{ category: string; items: ServiceCardType[] }>>(
@@ -94,8 +91,8 @@ export function WhatWeDoOrganism({
               <ul className="fx-whatwedo-list" aria-label={group.category}>
                 {group.items.map((service) => (
                   <li key={service.slug ?? service.name}>
-                    {locale && service.slug ? (
-                      <Link href={`/${locale}/${linkBasePath}/${service.slug}`} className="fx-whatwedo-item-link">
+                    {service.slug ? (
+                      <Link href={`/${linkBasePath}/${service.slug}`} className="fx-whatwedo-item-link">
                         <article className={showMedia ? "fx-whatwedo-item fx-whatwedo-item-media" : "fx-whatwedo-item"}>
                           <div className="fx-whatwedo-item-content">
                             <h4 className="fx-whatwedo-item-title">{service.name}</h4>

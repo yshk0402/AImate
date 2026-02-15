@@ -1,7 +1,7 @@
 # Landing Page Playbook
 
 ## Route Convention
-- `/{locale}/lp/{campaign}`
+- `/lp/{campaign}`
 
 ## Recommended Structure
 1. Value proposition

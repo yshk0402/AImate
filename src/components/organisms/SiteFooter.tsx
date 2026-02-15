@@ -1,10 +1,7 @@
 import Link from "next/link";
 
-import type { Locale } from "@/types/content";
-
 type SiteFooterProps = {
   company: string;
-  locale: Locale;
 };
 
 type FooterLink = {
@@ -22,54 +19,36 @@ type FooterContent = {
   secondary: FooterLink[];
 };
 
-function getFooterContent(locale: Locale): FooterContent {
-  const aboutChildren =
-    locale === "ja"
-      ? [
-          { href: `/${locale}/about#mvv`, label: "MVV" },
-          { href: `/${locale}/about#team`, label: "Team" },
-          { href: `/${locale}/about#history`, label: "沿革" },
-          { href: `/${locale}/about#company-profile`, label: "会社概要" }
-        ]
-      : [
-          { href: `/${locale}/about#mvv`, label: "MVV" },
-          { href: `/${locale}/about#team`, label: "Team" },
-          { href: `/${locale}/about#history`, label: "History" },
-          { href: `/${locale}/about#company-profile`, label: "Company Profile" }
-        ];
-
-  const whatWeDoChildren =
-    locale === "ja"
-      ? [
-          { href: `/${locale}/what-we-do#ai-dx`, label: "AI DX事業" },
-          { href: `/${locale}/what-we-do#education`, label: "教育事業" }
-        ]
-      : [
-          { href: `/${locale}/what-we-do#ai-dx`, label: "AI DX" },
-          { href: `/${locale}/what-we-do#education`, label: "Education" }
-        ];
-
+function getFooterContent(): FooterContent {
   return {
     groups: [
       {
-        heading: { href: `/${locale}/about`, label: "about" },
-        children: aboutChildren
+        heading: { href: "/about", label: "about" },
+        children: [
+          { href: "/about#mvv", label: "MVV" },
+          { href: "/about#team", label: "Team" },
+          { href: "/about#history", label: "沿革" },
+          { href: "/about#company-profile", label: "会社概要" }
+        ]
       },
       {
-        heading: { href: `/${locale}/what-we-do`, label: "what we do" },
-        children: whatWeDoChildren
+        heading: { href: "/what-we-do", label: "what we do" },
+        children: [
+          { href: "/what-we-do#ai-dx", label: "AI DX事業" },
+          { href: "/what-we-do#education", label: "教育事業" }
+        ]
       }
     ],
     secondary: [
-      { href: `/${locale}/news`, label: "News" },
-      { href: `/${locale}/contact`, label: "Contact" }
+      { href: "/news", label: "News" },
+      { href: "/contact", label: "Contact" }
     ]
   };
 }
 
-export function SiteFooter({ company, locale }: SiteFooterProps) {
+export function SiteFooter({ company }: SiteFooterProps) {
   const year = new Date().getFullYear();
-  const footerContent = getFooterContent(locale);
+  const footerContent = getFooterContent();
 
   return (
     <footer className="fx-site-footer">

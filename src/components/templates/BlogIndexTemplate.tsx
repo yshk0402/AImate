@@ -4,12 +4,11 @@ import type { SiteLocaleContent } from "@/components/site/content";
 import type { BlogPost } from "@/types/content";
 
 type BlogIndexTemplateProps = {
-  locale: "ja" | "en";
   content: SiteLocaleContent;
   posts: BlogPost[];
 };
 
-export function BlogIndexTemplate({ locale, content, posts }: BlogIndexTemplateProps) {
+export function BlogIndexTemplate({ content, posts }: BlogIndexTemplateProps) {
   return (
     <Surface as="section" tone="light" labelledBy="blog-index-title" className="fx-page-section">
       <div className="fx-shell">
@@ -22,7 +21,7 @@ export function BlogIndexTemplate({ locale, content, posts }: BlogIndexTemplateP
           <ul className="fx-news-grid" aria-label={content.blog.listAriaLabel}>
             {posts.map((post) => (
               <li key={post.slug}>
-                <NewsCard locale={locale} post={post} />
+                <NewsCard post={post} />
               </li>
             ))}
           </ul>
