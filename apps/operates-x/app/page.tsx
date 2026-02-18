@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import { HeroHeadline } from "./components/HeroHeadline";
 import { FloatingContactBanner } from "./components/FloatingContactBanner";
@@ -167,9 +168,9 @@ export default function OperatesXPage() {
               ))}
             </div>
             <div className="fx-case-section-action">
-              <a href="/case" className="fx-case-section-link">
+              <Link href="/case" className="fx-case-section-link">
                 もっと見る
-              </a>
+              </Link>
             </div>
           </div>
         </section>
