@@ -25,10 +25,12 @@ export default function BlogPage() {
             {blogArticles.map((article) => (
               <article key={article.slug} className="fx-listing-card">
                 <div className="fx-listing-card-image" aria-hidden="true" />
-                <h3>{article.title}</h3>
-                <time className="fx-listing-date" dateTime={article.publishedAt}>
-                  {formatDisplayDate(article.publishedAt)}
-                </time>
+                <div className="fx-card-meta">
+                  <h3>{article.title}</h3>
+                  <time className="fx-listing-date" dateTime={article.publishedAt}>
+                    {formatDisplayDate(article.publishedAt)}
+                  </time>
+                </div>
               </article>
             ))}
           </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "/", label: "Operates X" },
+  { href: "/", label: "AImate" },
   { href: "/#about-title", label: "概要" },
   { href: "/#service-core-title", label: "サービス" },
   { href: "/#section6", label: "導入の流れ" },
@@ -16,10 +16,10 @@ export function SiteFooter() {
     <footer className="fx-footer" aria-labelledby="footer-brand">
       <div className="fx-footer-inner">
         <h2 id="footer-brand" className="fx-footer-brand">
-          Operates X
+          AImate
         </h2>
         <div className="fx-footer-logo-wrap">
-          <Image src="/icon.png" alt="Operates Xロゴ" width={98} height={98} className="fx-footer-logo" />
+          <Image src="/icon.png" alt="AImateロゴ" width={98} height={98} className="fx-footer-logo" />
         </div>
         <nav className="fx-footer-nav" aria-label="フッターナビゲーション">
           {footerLinks.map((link) => (
@@ -29,14 +29,14 @@ export function SiteFooter() {
           ))}
         </nav>
         <div className="fx-footer-legal">
-          <p className="fx-footer-copy">© 2026 Operates X</p>
+          <p className="fx-footer-copy">© 2026 AImate</p>
           <div className="fx-footer-legal-links">
-            <a href="#" className="fx-footer-link fx-footer-link-legal">
+            <Link href="/privacy" className="fx-footer-link fx-footer-link-legal">
               プライバシーポリシー
-            </a>
-            <a href="#" className="fx-footer-link fx-footer-link-legal">
+            </Link>
+            <Link href="/terms" className="fx-footer-link fx-footer-link-legal">
               利用規約
-            </a>
+            </Link>
           </div>
         </div>
       </div>

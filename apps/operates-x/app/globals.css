@@ -133,8 +133,7 @@ a {
 }
 
 .fx-nav-link[aria-current="page"] {
-  border-color: var(--fx-border-strong);
-  background: #f6f6f6;
+  color: var(--fx-accent);
 }
 
 .fx-nav-link:hover {
@@ -706,27 +705,34 @@ a {
 .fx-case-section-grid {
   margin-top: clamp(1.6rem, 2.4vw, 2.4rem);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2.2vw, 3.2rem);
+  grid-template-columns: repeat(3, minmax(0, clamp(230px, 24vw, 320px)));
+  justify-content: center;
+  gap: clamp(1rem, 1.8vw, 2rem);
 }
 
 .fx-case-card {
   background: #fff;
-  border-radius: 4px;
-  padding: clamp(1rem, 1.6vw, 1.5rem);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .fx-case-card-image {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #c6c6c6;
 }
 
+.fx-card-meta {
+  padding: clamp(0.82rem, 1.2vw, 1.12rem);
+}
+
 .fx-case-card h3 {
-  margin: clamp(1rem, 1.3vw, 1.35rem) 0 0;
+  margin: 0;
   color: #121212;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.05rem, 0.3vw + 1rem, 1.3rem);
+  font-size: clamp(1.02rem, 0.3vw + 0.96rem, 1.24rem);
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 0.01em;
@@ -739,9 +745,9 @@ a {
 }
 
 .fx-case-card p {
-  margin: clamp(0.65rem, 1vw, 0.8rem) 0 0;
+  margin: clamp(0.52rem, 0.78vw, 0.68rem) 0 0;
   color: #676767;
-  font-size: clamp(0.95rem, 0.2vw + 0.88rem, 1.1rem);
+  font-size: clamp(0.94rem, 0.18vw + 0.88rem, 1.02rem);
   line-height: 1.4;
 }
 
@@ -1025,6 +1031,7 @@ a {
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 1.22;
+  text-align: center;
 }
 
 .fx-contact-switch-title {
@@ -1035,6 +1042,7 @@ a {
   font-weight: 900;
   letter-spacing: 0.01em;
   line-height: 1.2;
+  text-align: center;
 }
 
 .fx-contact-switch-control {
@@ -1308,28 +1316,32 @@ a {
 
 .fx-listing-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2.1vw, 2.2rem);
+  grid-template-columns: repeat(3, minmax(0, clamp(230px, 24vw, 320px)));
+  justify-content: center;
+  gap: clamp(1rem, 1.8vw, 2rem);
 }
 
 .fx-listing-card {
   background: #fff;
   border: 1px solid #d1d1d1;
-  box-shadow: 0 2px 0 rgb(0 0 0 / 24%);
-  padding: clamp(1rem, 1.6vw, 1.25rem);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 8%);
+  padding: 0;
+  overflow: hidden;
 }
 
 .fx-listing-card-image {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #c9c9c9;
 }
 
 .fx-listing-card h3 {
-  margin: clamp(0.95rem, 1.2vw, 1.2rem) 0 0;
+  margin: 0;
   color: #111;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.35rem, 0.45vw + 1.2rem, 1.6rem);
+  font-size: clamp(1.14rem, 0.34vw + 1.06rem, 1.34rem);
   font-weight: 900;
   line-height: 1.42;
   display: -webkit-box;
@@ -1342,30 +1354,38 @@ a {
 
 .fx-listing-date {
   display: block;
-  margin-top: clamp(0.65rem, 0.95vw, 0.85rem);
+  margin-top: clamp(0.52rem, 0.82vw, 0.72rem);
   color: #666;
-  font-size: clamp(1rem, 0.24vw + 0.93rem, 1.1rem);
+  font-size: clamp(0.94rem, 0.18vw + 0.88rem, 1.02rem);
   line-height: 1;
 }
 
-.fx-contact-hero {
-  grid-template-columns: minmax(0, 1fr);
+.fx-listing-card .fx-card-meta {
+  padding: clamp(0.82rem, 1.2vw, 1.12rem);
 }
 
-.fx-email-link {
-  display: inline-flex;
-  margin-top: 0.9rem;
-  border: 1px solid var(--fx-border-strong);
-  border-radius: var(--fx-radius-control);
-  background: var(--fx-surface);
-  text-decoration: none;
-  padding: 0.58rem 0.8rem;
+.fx-subpage-content {
+  max-width: min(74ch, 100%);
+  margin-inline: auto;
+}
+
+.fx-subpage-content p {
+  margin: 0;
+  color: #1b1b1b;
+  font-size: clamp(1rem, 0.35vw + 0.94rem, 1.1rem);
+  line-height: 1.75;
+}
+
+.fx-subpage-content p + p {
+  margin-top: 1rem;
+}
+
+.fx-legal-content h2 {
+  margin: clamp(1.2rem, 2.2vw, 1.8rem) 0 0.5rem;
+  color: #111;
   font-family: var(--font-heading), sans-serif;
-  font-weight: 700;
-}
-
-.fx-contact-actions {
-  margin-top: var(--fx-space-2);
+  font-size: clamp(1.2rem, 0.3vw + 1.12rem, 1.32rem);
+  line-height: 1.4;
 }
 
 .fx-footer {
@@ -1520,7 +1540,7 @@ a {
   }
 
   .fx-case-section-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, clamp(220px, 42vw, 320px)));
   }
 
   .fx-step-flow-list {
@@ -1542,7 +1562,7 @@ a {
   }
 
   .fx-listing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, clamp(220px, 42vw, 320px)));
   }
 
   .fx-contact-switch-title {
@@ -1765,12 +1785,8 @@ a {
     gap: 0.9rem;
   }
 
-  .fx-listing-card {
-    padding: 0.9rem;
-  }
-
   .fx-listing-card h3 {
-    font-size: clamp(1.15rem, 3.9vw, 1.35rem);
+    font-size: clamp(1.04rem, 3.3vw, 1.2rem);
   }
 
   .fx-contact-switch-section {

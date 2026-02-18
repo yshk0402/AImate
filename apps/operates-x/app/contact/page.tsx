@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { ActionRow } from "../components/ActionRow";
+import { TallyRequestEmbed } from "../components/ContactEmbeds";
 import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
@@ -10,19 +10,20 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="fx-site">
+    <main className="fx-site fx-listing-page">
       <div className="fx-shell">
-        <SiteHeader currentPath="/contact" />
-        <section className="fx-hero fx-contact-hero" aria-labelledby="contact-page-title">
-          <div>
-            <h1 id="contact-page-title" className="fx-hero-title fx-subpage-title">
+        <section className="fx-listing-hero" aria-labelledby="contact-page-title">
+          <SiteHeader currentPath="/contact" />
+          <div className="fx-listing-title-block">
+            <p className="fx-listing-eyebrow">contact</p>
+            <h1 id="contact-page-title" className="fx-listing-title">
               お問い合わせ
             </h1>
-            <p className="fx-hero-description">Operate Xのご相談は、以下のメールアドレスまでご連絡ください。</p>
-            <a href="mailto:hello@example.com" className="fx-email-link">
-              hello@example.com
-            </a>
-            <ActionRow primary={{ href: "/", label: "トップへ戻る" }} className="fx-contact-actions" />
+          </div>
+        </section>
+        <section className="fx-listing-section" aria-label="お問い合わせ">
+          <div className="fx-subpage-content">
+            <TallyRequestEmbed />
           </div>
         </section>
       </div>

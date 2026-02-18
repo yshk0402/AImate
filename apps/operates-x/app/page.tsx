@@ -159,8 +159,10 @@ export default function OperatesXPage() {
               {homeCaseHighlights.map((item) => (
                 <article key={item.slug} className="fx-case-card">
                   <div className="fx-case-card-image" aria-hidden="true" />
-                  <h3>{item.title}</h3>
-                  <p>{formatDisplayDate(item.publishedAt)}</p>
+                  <div className="fx-card-meta">
+                    <h3>{item.title}</h3>
+                    <p>{formatDisplayDate(item.publishedAt)}</p>
+                  </div>
                 </article>
               ))}
             </div>
