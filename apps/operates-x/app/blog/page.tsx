@@ -30,6 +30,7 @@ export default function BlogPage() {
                   <div className="fx-listing-card-image" aria-hidden="true" />
                   <div className="fx-card-meta">
                     <h3>{article.title}</h3>
+                    <p className="fx-listing-card-summary">{article.description}</p>
                     <time className="fx-listing-date" dateTime={article.publishedAt}>
                       {formatDisplayDate(article.publishedAt)}
                     </time>

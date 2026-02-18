@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { type ArticleCategory, type ArticleEntry, formatDisplayDate, renderMarkdownToHtml } from "../lib/content";
 import { SiteHeader } from "./SiteHeader";
@@ -39,6 +40,20 @@ export function ArticleTemplate({ article, category }: ArticleTemplateProps) {
             </h1>
           </div>
         </section>
+
+        <nav className="fx-article-breadcrumb" aria-label="パンくずリスト">
+          <ol>
+            <li>
+              <Link href="/">ホーム</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link href={meta.path}>{meta.label}</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">{article.frontmatter.title}</li>
+          </ol>
+        </nav>
 
         <article className="fx-article-shell" aria-label={`${article.frontmatter.title} の記事本文`}>
           <div className="fx-article-cover-wrap">

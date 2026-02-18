@@ -309,17 +309,12 @@ a {
 
 .fx-hero-banner {
   position: fixed;
-  right: clamp(10px, 2.2vw, 24px);
-  bottom: clamp(10px, 2.2vw, 24px);
+  right: calc(clamp(10px, 2.2vw, 24px) + 28px);
+  bottom: calc(clamp(10px, 2.2vw, 24px) + 14px);
   width: min(var(--fx-hero-banner-width, clamp(290px, 38vw, 440px)), calc(100vw - 1rem));
   height: var(--fx-hero-banner-height, clamp(146px, 18vw, 206px));
-  border: 8px solid #080808;
-  background: #fff;
-  padding: clamp(0.75rem, 1.4vw, 1rem);
-  display: grid;
-  grid-template-columns: minmax(100px, 1fr) minmax(124px, 1fr);
-  align-items: center;
-  gap: clamp(0.6rem, 1.2vw, 1rem);
+  display: block;
+  overflow: hidden;
   text-decoration: none;
   z-index: 9999;
   transition:
@@ -331,40 +326,11 @@ a {
   transform: none !important;
 }
 
-.fx-hero-banner-visual {
-  position: relative;
+.fx-hero-banner-image {
+  width: 100%;
+  height: 100%;
   display: block;
-  min-height: clamp(78px, 9vw, 102px);
-}
-
-.fx-hero-banner-block {
-  position: absolute;
-  display: block;
-  background: #c8c8c8;
-}
-
-.fx-hero-banner-block-main {
-  inset: 0.1rem 0.9rem 0.75rem 0.2rem;
-}
-
-.fx-hero-banner-block-sub {
-  inset: 0.95rem 0.15rem 1.2rem 52%;
-}
-
-.fx-hero-banner-block-mini {
-  inset: 62% 0.7rem 0.1rem 0.2rem;
-}
-
-.fx-hero-banner-copy {
-  display: grid;
-  justify-items: end;
-  gap: 0.14rem;
-  color: var(--fx-accent);
-  font-family: var(--font-heading), sans-serif;
-  font-weight: 900;
-  line-height: 1.3;
-  font-size: clamp(1rem, 1vw, 1.5rem);
-  letter-spacing: 0.01em;
+  object-fit: cover;
 }
 
 .fx-hero-home .fx-hero-title.is-active {
@@ -717,10 +683,26 @@ a {
   overflow: hidden;
 }
 
+.fx-case-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.fx-case-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
 .fx-case-card-image {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
+  object-fit: cover;
   background: #c6c6c6;
 }
 
@@ -728,11 +710,15 @@ a {
   padding: clamp(0.82rem, 1.2vw, 1.12rem);
 }
 
+.fx-case-card .fx-card-meta {
+  min-height: clamp(10rem, 13vw, 11.2rem);
+}
+
 .fx-case-card h3 {
   margin: 0;
   color: #121212;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.02rem, 0.3vw + 0.96rem, 1.24rem);
+  font-size: clamp(0.95rem, 0.25vw + 0.9rem, 1.12rem);
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 0.01em;
@@ -744,11 +730,23 @@ a {
   min-height: calc(1em * 1.4 * 2);
 }
 
-.fx-case-card p {
-  margin: clamp(0.52rem, 0.78vw, 0.68rem) 0 0;
+.fx-case-card-summary {
+  margin: clamp(0.38rem, 0.62vw, 0.52rem) 0 0;
+  color: #424242;
+  font-size: clamp(0.84rem, 0.15vw + 0.8rem, 0.94rem);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.fx-case-card-date {
+  margin: clamp(0.42rem, 0.68vw, 0.58rem) 0 0;
   color: #676767;
-  font-size: clamp(0.94rem, 0.18vw + 0.88rem, 1.02rem);
-  line-height: 1.4;
+  font-size: clamp(0.88rem, 0.14vw + 0.84rem, 0.96rem);
+  line-height: 1.3;
 }
 
 .fx-case-section-action {
@@ -1323,50 +1321,74 @@ a {
 
 .fx-listing-card {
   background: #fff;
-  border: 1px solid #d1d1d1;
+  border: 0;
   border-radius: 8px;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 8%);
+  box-shadow: none;
   padding: 0;
   overflow: hidden;
 }
 
 .fx-listing-card-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
+}
+
+.fx-listing-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .fx-listing-card-image {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
+  object-fit: cover;
   background: #c9c9c9;
 }
 
 .fx-listing-card h3 {
   margin: 0;
-  color: #111;
+  color: #121212;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.14rem, 0.34vw + 1.06rem, 1.34rem);
+  font-size: clamp(0.95rem, 0.25vw + 0.9rem, 1.12rem);
   font-weight: 900;
-  line-height: 1.42;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   overflow: hidden;
-  min-height: calc(1em * 1.42 * 2);
+  min-height: calc(1em * 1.4 * 2);
+}
+
+.fx-listing-card-summary {
+  margin: clamp(0.38rem, 0.62vw, 0.52rem) 0 0;
+  color: #424242;
+  font-size: clamp(0.84rem, 0.15vw + 0.8rem, 0.94rem);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 .fx-listing-date {
   display: block;
-  margin-top: clamp(0.52rem, 0.82vw, 0.72rem);
-  color: #666;
-  font-size: clamp(0.94rem, 0.18vw + 0.88rem, 1.02rem);
-  line-height: 1;
+  margin-top: clamp(0.42rem, 0.68vw, 0.58rem);
+  color: #676767;
+  font-size: clamp(0.88rem, 0.14vw + 0.84rem, 0.96rem);
+  line-height: 1.3;
 }
 
 .fx-listing-card .fx-card-meta {
   padding: clamp(0.82rem, 1.2vw, 1.12rem);
+  min-height: clamp(10rem, 13vw, 11.2rem);
 }
 
 .fx-subpage-content {
@@ -1397,6 +1419,37 @@ a {
   width: min(75%, 980px);
   margin-inline: auto;
   padding-bottom: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+.fx-article-breadcrumb {
+  margin: 0 0 clamp(0.9rem, 1.6vw, 1.2rem);
+  margin-left: clamp(0.4rem, 1vw, 0.85rem);
+}
+
+.fx-article-breadcrumb ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  color: #555;
+  font-size: clamp(0.86rem, 0.2vw + 0.82rem, 0.96rem);
+  line-height: 1.4;
+}
+
+.fx-article-breadcrumb a {
+  text-decoration: none;
+}
+
+.fx-article-breadcrumb a:hover {
+  color: var(--fx-accent);
+}
+
+.fx-article-breadcrumb li[aria-current="page"] {
+  color: #222;
+  font-weight: 700;
 }
 
 .fx-article-cover-wrap {
@@ -1881,8 +1934,7 @@ a {
   }
 
   .fx-hero-banner {
-    border-width: 6px;
-    grid-template-columns: minmax(100px, 1fr) minmax(132px, 1fr);
+    display: block;
   }
 
   .fx-hero-line {

@@ -159,11 +159,22 @@ export default function OperatesXPage() {
             <div className="fx-case-section-grid">
               {homeCaseHighlights.map((item) => (
                 <article key={item.slug} className="fx-case-card">
-                  <div className="fx-case-card-image" aria-hidden="true" />
-                  <div className="fx-card-meta">
-                    <h3>{item.title}</h3>
-                    <p>{formatDisplayDate(item.publishedAt)}</p>
-                  </div>
+                  <Link href={`/case/${item.slug}`} className="fx-case-card-link" aria-label={`${item.title} を読む`}>
+                    <div className="fx-case-card-image-wrap" aria-hidden="true">
+                      <Image
+                        src={item.thumbnail ?? "/images/operates-x/placeholders/case-cover.svg"}
+                        alt=""
+                        fill
+                        sizes="(max-width: 680px) 100vw, (max-width: 1080px) 42vw, 320px"
+                        className="fx-case-card-image"
+                      />
+                    </div>
+                    <div className="fx-card-meta">
+                      <h3>{item.title}</h3>
+                      <p className="fx-case-card-summary">{item.description}</p>
+                      <p className="fx-case-card-date">{formatDisplayDate(item.publishedAt)}</p>
+                    </div>
+                  </Link>
                 </article>
               ))}
             </div>

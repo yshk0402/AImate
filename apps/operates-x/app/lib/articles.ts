@@ -2,6 +2,7 @@ import { type ArticleEntry, formatDisplayDate, getPublishedArticles } from "./co
 
 export type ListingArticle = {
   title: string;
+  description: string;
   slug: string;
   publishedAt: string;
   thumbnail?: string;
@@ -10,6 +11,7 @@ export type ListingArticle = {
 function toListingArticle(article: ArticleEntry): ListingArticle {
   return {
     title: article.frontmatter.title,
+    description: article.frontmatter.description,
     slug: article.frontmatter.slug,
     publishedAt: article.frontmatter.publishedAt ?? "",
     thumbnail: article.frontmatter.thumbnail

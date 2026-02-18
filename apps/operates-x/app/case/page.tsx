@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { SiteHeader } from "../components/SiteHeader";
@@ -27,9 +28,18 @@ export default function CasePage() {
             {caseArticles.map((article) => (
               <article key={article.slug} className="fx-listing-card">
                 <Link href={`/case/${article.slug}`} className="fx-listing-card-link" aria-label={`${article.title} を読む`}>
-                  <div className="fx-listing-card-image" aria-hidden="true" />
+                  <div className="fx-listing-card-image-wrap" aria-hidden="true">
+                    <Image
+                      src={article.thumbnail ?? "/images/operates-x/placeholders/case-cover.svg"}
+                      alt=""
+                      fill
+                      sizes="(max-width: 680px) 100vw, (max-width: 1080px) 42vw, 320px"
+                      className="fx-listing-card-image"
+                    />
+                  </div>
                   <div className="fx-card-meta">
                     <h3>{article.title}</h3>
+                    <p className="fx-listing-card-summary">{article.description}</p>
                     <time className="fx-listing-date" dateTime={article.publishedAt}>
                       {formatDisplayDate(article.publishedAt)}
                     </time>

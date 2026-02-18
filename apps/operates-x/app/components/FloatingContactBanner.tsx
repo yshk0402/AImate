@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function FloatingContactBanner() {
@@ -45,15 +46,14 @@ export function FloatingContactBanner() {
         pointerEvents: fadeProgress > 0.95 ? "none" : "auto"
       }}
     >
-      <span className="fx-hero-banner-visual" aria-hidden="true">
-        <span className="fx-hero-banner-block fx-hero-banner-block-main" />
-        <span className="fx-hero-banner-block fx-hero-banner-block-sub" />
-        <span className="fx-hero-banner-block fx-hero-banner-block-mini" />
-      </span>
-      <span className="fx-hero-banner-copy">
-        <span>無料相談</span>
-        <span>受付中</span>
-      </span>
+      <Image
+        src="/images/operates-x/aimate-banner-v2.png"
+        alt=""
+        aria-hidden="true"
+        width={440}
+        height={206}
+        className="fx-hero-banner-image"
+      />
     </a>
   );
 }
