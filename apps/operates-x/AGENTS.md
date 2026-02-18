@@ -26,6 +26,7 @@ The goal is to ship blog content and landing pages rapidly while keeping all sou
 ## Content Placement Rules
 - Blog content: `content/blog/*.mdx`
 - Case study content: `content/case/*.mdx`
+- News content: `content/news/*.mdx`
 - Landing pages: `content/lp/*.mdx`
 - Public images: `public/images/*`
 
@@ -40,6 +41,7 @@ Required fields:
 Optional fields:
 - `publishedAt` (ISO date)
 - `tags`
+- `newsLabel` (ニュースカード上の赤ラベル文字列)
 - `ogImage`
 - `thumbnail`
 
@@ -54,6 +56,21 @@ Optional fields:
 - `publishedAt` (ISO date)
 - `campaign`
 - `tags`
+- `newsLabel` (ニュースカード上の赤ラベル文字列)
+- `ogImage`
+- `thumbnail`
+
+### News
+Required fields:
+- `title`
+- `description`
+- `slug`
+- `status` (`draft` | `published`)
+
+Optional fields:
+- `publishedAt` (ISO date)
+- `tags`
+- `newsLabel` (ニュースカード上の赤ラベル文字列)
 - `ogImage`
 - `thumbnail`
 
@@ -65,3 +82,4 @@ Optional fields:
 - Route format: `/...` (no locale prefix)
 - Blog detail: `/blog/[slug]`
 - Case detail: `/case/[slug]`
+- News detail: `/news/[slug]`

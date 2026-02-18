@@ -19,6 +19,11 @@ const categoryMeta = {
     path: "/case",
     label: "導入事例",
     fallbackThumbnail: "/images/operates-x/placeholders/case-cover.svg"
+  },
+  news: {
+    path: "/news",
+    label: "ニュース",
+    fallbackThumbnail: "/images/operates-x/placeholders/blog-cover.svg"
   }
 } as const;
 
@@ -91,6 +96,33 @@ export function ArticleTemplate({ article, category }: ArticleTemplateProps) {
           ) : null}
 
           <div className="fx-article-body" dangerouslySetInnerHTML={{ __html: renderMarkdownToHtml(article.body) }} />
+
+          <section className="fx-article-banner-section" aria-label="関連バナー">
+            <div className="fx-article-banner-grid">
+              <div className="fx-article-banner-item">
+                <Link href="/contact" aria-label="お問い合わせページへ移動（お問い合わせバナー）">
+                  <Image
+                    src="/images/operates-x/AImate_banner_contact2.png"
+                    alt="お問い合わせバナー"
+                    width={1200}
+                    height={420}
+                    className="fx-article-banner-image"
+                  />
+                </Link>
+              </div>
+              <div className="fx-article-banner-item">
+                <Link href="/contact" aria-label="お問い合わせページへ移動（資料バナー）">
+                  <Image
+                    src="/images/operates-x/AImate_banner_slide.png"
+                    alt="資料バナー"
+                    width={1200}
+                    height={420}
+                    className="fx-article-banner-image"
+                  />
+                </Link>
+              </div>
+            </div>
+          </section>
         </article>
       </div>
     </main>

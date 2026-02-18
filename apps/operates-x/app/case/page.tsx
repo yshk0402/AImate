@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteHeader } from "../components/SiteHeader";
-import { caseArticles, formatDisplayDate } from "../lib/articles";
+import { formatDisplayDate, getCaseArticles } from "../lib/articles";
 
 export const metadata: Metadata = {
   title: "導入事例 | Operates X",
@@ -11,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function CasePage() {
+  const caseArticles = getCaseArticles();
+
   return (
     <main className="fx-site fx-listing-page">
       <div className="fx-shell">

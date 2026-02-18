@@ -70,7 +70,7 @@ export function TallyRequestEmbed() {
         frameBorder="0"
         marginHeight={0}
         marginWidth={0}
-        title="まずは無料で資料請求"
+        title="まずは無料でお問い合わせ"
         className="fx-tally-embed"
       />
     </div>

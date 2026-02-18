@@ -6,6 +6,7 @@ type SiteHeaderProps = {
 };
 
 const links = [
+  { href: "/news", label: "ニュース" },
   { href: "/case", label: "導入事例" },
   { href: "/blog", label: "ブログ" }
 ] as const;

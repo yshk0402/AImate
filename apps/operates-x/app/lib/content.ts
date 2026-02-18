@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-export type ArticleCategory = "blog" | "case";
+export type ArticleCategory = "blog" | "case" | "news";
 
 export type ArticleStatus = "draft" | "published";
 
@@ -12,6 +12,7 @@ export type ArticleFrontmatter = {
   status: ArticleStatus;
   publishedAt?: string;
   tags?: string[];
+  newsLabel?: string;
   ogImage?: string;
   thumbnail?: string;
   campaign?: string;
@@ -172,6 +173,7 @@ function ensureArticleFrontmatter(
 
   const publishedAt = typeof frontmatterData.publishedAt === "string" ? frontmatterData.publishedAt : undefined;
   const tags = Array.isArray(frontmatterData.tags) ? frontmatterData.tags : undefined;
+  const newsLabel = typeof frontmatterData.newsLabel === "string" ? frontmatterData.newsLabel : undefined;
   const ogImage = typeof frontmatterData.ogImage === "string" ? frontmatterData.ogImage : undefined;
   const thumbnail = typeof frontmatterData.thumbnail === "string" ? frontmatterData.thumbnail : undefined;
   const campaign = category === "case" && typeof frontmatterData.campaign === "string" ? frontmatterData.campaign : undefined;
@@ -183,6 +185,7 @@ function ensureArticleFrontmatter(
     status,
     publishedAt,
     tags,
+    newsLabel,
     ogImage,
     thumbnail,
     campaign

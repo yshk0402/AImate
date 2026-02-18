@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8
     },
     {
+      url: `${SITE_URL}/news`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8
+    },
+    {
       url: `${SITE_URL}/contact`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -59,5 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...caseRoutes];
+  const newsRoutes: MetadataRoute.Sitemap = getPublishedArticles("news").map((article) => ({
+    url: `${SITE_URL}/news/${article.frontmatter.slug}`,
+    lastModified: article.frontmatter.publishedAt ? new Date(article.frontmatter.publishedAt) : now,
+    changeFrequency: "monthly",
+    priority: 0.7
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...caseRoutes, ...newsRoutes];
 }

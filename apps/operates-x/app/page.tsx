@@ -6,7 +6,7 @@ import { HeroHeadline } from "./components/HeroHeadline";
 import { FloatingContactBanner } from "./components/FloatingContactBanner";
 import { SiteHeader } from "./components/SiteHeader";
 import { CalConsultEmbed, TallyRequestEmbed } from "./components/ContactEmbeds";
-import { formatDisplayDate, homeCaseHighlights, homeNewsItems } from "./lib/articles";
+import { formatDisplayDate, getHomeCaseHighlights, getHomeNewsItems } from "./lib/articles";
 
 const workflowSteps = [
   {
@@ -42,6 +42,9 @@ export const metadata: Metadata = {
 };
 
 export default function OperatesXPage() {
+  const homeCaseHighlights = getHomeCaseHighlights();
+  const homeNewsItems = getHomeNewsItems();
+
   return (
     <main className="fx-site fx-site-home">
       <div className="fx-shell">
@@ -221,14 +224,24 @@ export default function OperatesXPage() {
             </h2>
             <ul className="fx-news-list">
               {homeNewsItems.map((item) => (
-                <li key={`${item.category}-${item.slug}`}>
+                <li key={item.href}>
                   <article className="fx-news-item">
-                    <div className="fx-news-thumb" aria-hidden="true" />
-                    <div className="fx-news-body">
-                      <p className="fx-news-tag">{item.category}</p>
-                      <h3>{item.title}</h3>
-                      <p className="fx-news-date">{formatDisplayDate(item.publishedAt)}</p>
-                    </div>
+                    <Link href={item.href} className="fx-news-item-link" aria-label={`${item.title} を読む`}>
+                      <div className="fx-news-thumb" aria-hidden="true">
+                        <Image
+                          src={item.thumbnail ?? item.fallbackThumbnail}
+                          alt=""
+                          fill
+                          sizes="(max-width: 680px) 100vw, 240px"
+                          className="fx-news-thumb-image"
+                        />
+                      </div>
+                      <div className="fx-news-body">
+                        <p className="fx-news-tag">{item.label}</p>
+                        <h3>{item.title}</h3>
+                        <p className="fx-news-date">{formatDisplayDate(item.publishedAt)}</p>
+                      </div>
+                    </Link>
                   </article>
                 </li>
               ))}
@@ -253,14 +266,14 @@ export default function OperatesXPage() {
               <input type="radio" name="contact-switch" id="contact-switch-consult" className="fx-contact-switch-input" />
               <div className="fx-contact-switch-tabs">
                 <label htmlFor="contact-switch-document" className="fx-contact-switch-tab">
-                  資料請求
+                  お問い合わせ
                 </label>
                 <label htmlFor="contact-switch-consult" className="fx-contact-switch-tab">
                   無料で相談する
                 </label>
               </div>
               <div className="fx-contact-switch-panels">
-                <section className="fx-contact-switch-panel fx-contact-panel-document" aria-label="資料請求フォーム">
+                <section className="fx-contact-switch-panel fx-contact-panel-document" aria-label="お問い合わせフォーム">
                   <TallyRequestEmbed />
                 </section>
                 <section className="fx-contact-switch-panel fx-contact-panel-consult" aria-label="無料相談フォーム">
