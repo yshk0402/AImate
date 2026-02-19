@@ -5,8 +5,8 @@ import { SiteHeader } from "../components/SiteHeader";
 import { formatDisplayDate, getBlogArticles } from "../lib/articles";
 
 export const metadata: Metadata = {
-  title: "ブログ | Operates X",
-  description: "Operates Xのブログ一覧ページです。"
+  title: "ブログ | AImate",
+  description: "AImateのブログ一覧ページです。"
 };
 
 export default function BlogPage() {

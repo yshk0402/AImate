@@ -5,8 +5,8 @@ import { SiteHeader } from "../components/SiteHeader";
 import { formatDisplayDate, getNewsArticles } from "../lib/articles";
 
 export const metadata: Metadata = {
-  title: "ニュース | Operates X",
-  description: "Operates Xのニュース一覧ページです。"
+  title: "ニュース | AImate",
+  description: "AImateのニュース一覧ページです。"
 };
 
 export default function NewsPage() {

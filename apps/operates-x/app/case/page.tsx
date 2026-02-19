@@ -6,8 +6,8 @@ import { SiteHeader } from "../components/SiteHeader";
 import { formatDisplayDate, getCaseArticles } from "../lib/articles";
 
 export const metadata: Metadata = {
-  title: "導入事例 | Operates X",
-  description: "Operates Xの導入事例をまとめたページです。"
+  title: "導入事例 | AImate",
+  description: "AImateの導入事例をまとめたページです。"
 };
 
 export default function CasePage() {

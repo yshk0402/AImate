@@ -37,8 +37,8 @@ const workflowSteps = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Operates X | AI業務改善パートナー",
-  description: "月額でAI人材にタスクを依頼し放題。業務の再設計と実装まで。"
+  title: "AImate | AI業務改善パートナー",
+  description: "AImateは、AI導入のための業務再設計から実装・定着まで伴走するAI業務改善パートナーです。"
 };
 
 export default function OperatesXPage() {

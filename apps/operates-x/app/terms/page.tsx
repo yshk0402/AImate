@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "利用規約 | Operates X",
-  description: "Operates Xの利用規約です。"
+  title: "利用規約 | AImate",
+  description: "AImateの利用規約です。"
 };
 
 export default function TermsPage() {
@@ -23,7 +23,7 @@ export default function TermsPage() {
         <section className="fx-listing-section" aria-label="利用規約本文">
           <div className="fx-subpage-content fx-legal-content">
             <p>
-              本利用規約（以下「本規約」）は、Operates X（以下「当サービス」）の利用条件を定めるものです。
+              本利用規約（以下「本規約」）は、AImate（以下「当サービス」）の利用条件を定めるものです。
             </p>
             <h2>1. 適用</h2>
             <p>本規約は、当サービスの利用に関する一切の関係に適用されます。</p>

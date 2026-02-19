@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー | Operates X",
-  description: "Operates Xのプライバシーポリシーです。"
+  title: "プライバシーポリシー | AImate",
+  description: "AImateのプライバシーポリシーです。"
 };
 
 export default function PrivacyPage() {
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         <section className="fx-listing-section" aria-label="プライバシーポリシー本文">
           <div className="fx-subpage-content fx-legal-content">
             <p>
-              Operates X（以下「当サービス」）は、個人情報の保護に関する法令を遵守し、取得した情報を適切に取り扱います。
+              AImate（以下「当サービス」）は、個人情報の保護に関する法令を遵守し、取得した情報を適切に取り扱います。
             </p>
             <h2>1. 取得する情報</h2>
             <p>

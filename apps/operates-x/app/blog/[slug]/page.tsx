@@ -18,12 +18,12 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
 
   if (!article) {
     return {
-      title: "記事が見つかりません | Operates X"
+      title: "記事が見つかりません | AImate"
     };
   }
 
   return {
-    title: `${article.frontmatter.title} | Operates X`,
+    title: `${article.frontmatter.title} | AImate`,
     description: article.frontmatter.description,
     openGraph: {
       title: article.frontmatter.title,

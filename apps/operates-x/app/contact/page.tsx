@@ -4,8 +4,8 @@ import { TallyRequestEmbed } from "../components/ContactEmbeds";
 import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "お問い合わせ | Operates X",
-  description: "Operates Xへのお問い合わせページです。"
+  title: "お問い合わせ | AImate",
+  description: "AImateへのお問い合わせページです。"
 };
 
 export default function ContactPage() {

@@ -15,7 +15,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
   return (
     <header className="fx-site-header">
       <div className="fx-site-header-inner">
-        <Link href="/" className="fx-brand" aria-label="Operates X トップ">
+        <Link href="/" className="fx-brand" aria-label="AImate トップ">
           <Image src="/icon.png" alt="" width={58} height={58} className="fx-brand-mark" priority />
         </Link>
         <div className="fx-header-pill">
